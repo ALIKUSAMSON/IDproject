@@ -1,0 +1,384 @@
+{% extends 'dash.html' %}
+{% block content %}
+ 
+ <div class="container">
+  <ul class="nav nav-tabs">
+    <!--<li class="active"><a data-toggle="tab" href="#dashboard">Dashboard </a></li>-->
+    <li><a data-toggle="tab" href="#district">District Leaders </a></li>
+    <li><a data-toggle="tab" href="#constituency">Constituency Leaders</a></li>
+    <li><a data-toggle="tab" href="#leagues">League leaders</a></li>
+    <li><a data-toggle="tab" href="#others">Other leaders </a></li>
+    <li><a data-toggle="tab" href="#village">Villages</a></li>
+      <ul class="nav nav-right">
+        <li><a class="btn btn-default btn-xs pull-right" href="register">Register Account </a></li>
+       <li><a class="btn btn-default btn-xs pull-right" href="upload">Enter new leaders </a></li>
+       <!--<li><a class="btn btn-default btn-xs pull-right" href="dashboard">Import Excel File </a></li>-->
+       <li><a class="btn btn-default btn-xs pull-right" href="home_page">Home dashbaord </a></li>
+      </ul>
+      <h3 class="text-center pull-right"><span class="label label-inverse"><a href="/logout"> logout </a></span></h3>
+  </ul>
+  {% include 'messages.html' %}
+  <br>
+  <div class="tab-content">
+
+  <!--Inactive dashbaord-->
+     <!-- <div id="dashboard" class="tab-pane fade in active">
+    </div>-->
+
+    <div id="district" class="tab-pane fade in active">
+      <h3>District Leaders </h3>
+  <div class="container">
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#LC5">LC5 Chairperson</a></li>
+    <li><a data-toggle="pill" href="#womanmp">Woman MP</a></li>
+    <li><a data-toggle="pill" href="#womanc">Woman Counsellor</a></li>
+    <li><a data-toggle="pill" href="#nrmcp">NRM Chairperson</a></li>
+    <li><a data-toggle="pill" href="#special">Special GPs</a></li>
+    <li><a data-toggle="pill" href="#ermp">ER MPs</a></li>
+    <li><a data-toggle="pill" href="#army">ARMY MPs</a></li>
+  </ul>
+  
+  <div class="tab-content">
+    <div id="LC5" class="tab-pane fade in active">
+    <h3>LC5 Chairpersons List</h3>
+                     <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                          <th>ID</th>
+                          <th>FULL NAME</th>
+                           <th>EMAIL</th>
+                           <th>POSITION</th>
+                          <th>YEAR OF DUTY</th>
+                          <th>CONTACT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for lc in lc5 %}
+                        <tr>
+                          <td>{{lc.id}}</td>
+                          <td>{{lc.name}}</td>
+                          <td>{{lc.email}}</td>
+                          <td>{{lc.position}}</td>
+                          <td>{{lc.year}}</td>
+                          <td>{{lc.contact}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                     </table>
+                     </div>
+    </div>
+
+    <div id="womanmp" class="tab-pane fade">
+    <h4>Woman MP</h4>
+    <br>
+                         <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                        <th>ID</th>
+                          <th>FULL NAME</th>
+                           <th>EMAIL</th>
+                           <th>POSITION</th>
+                          <th>YEAR OF DUTY</th>
+                          <th>CONTACT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for wp in wmp %}
+                        <tr>
+                          <td>{{wp.id}}</td>
+                          <td>{{wp.name}}</td>
+                          <td>{{wp.email}}</td>
+                          <td>{{wp.position}}</td>
+                          <td>{{wp.year}}</td>
+                          <td>{{wp.contact}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                     </table>
+                     </div>
+
+    </div>
+
+    <div id="womanc" class="tab-pane fade">
+    <h4>Woman counsellor</h4>
+                         <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                        <th>ID</th>
+                          <th>FULL NAME</th>
+                           <th>EMAIL</th>
+                           <th>POSITION</th>
+                          <th>YEAR OF DUTY</th>
+                          <th>CONTACT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for wc in wmc %}
+                        <tr>
+                          <td>{{wc.id}}</td>
+                          <td>{{wc.name}}</td>
+                          <td>{{wc.email}}</td>
+                          <td>{{wc.position}}</td>
+                          <td>{{wc.year}}</td>
+                          <td>{{wc.contact}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                     </table>
+                     </div>
+
+    </div>
+    <div id="nrmcp" class="tab-pane fade">
+    <h4>NRM chairperson</h4>
+                         <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                        <th>ID</th>
+                          <th>FULL NAME</th>
+                           <th>EMAIL</th>
+                           <th>POSITION</th>
+                          <th>YEAR OF DUTY</th>
+                          <th>CONTACT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for nm in nrm %}
+                        <tr>
+                          <td>{{nm.id}}</td>
+                          <td>{{nm.name}}</td>
+                          <td>{{nm.email}}</td>
+                          <td>{{nm.position}}</td>
+                          <td>{{nm.year}}</td>
+                          <td>{{nm.contact}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                     </table>
+                     </div>
+
+    </div>
+    <div id="special" class="tab-pane fade">
+    <h4>Special GPs</h4>
+                         <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                        <th>ID</th>
+                          <th>FULL NAME</th>
+                           <th>EMAIL</th>
+                           <th>POSITION</th>
+                          <th>YEAR OF DUTY</th>
+                          <th>CONTACT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for sp in special %}
+                        <tr>
+                          <td>{{sp.id}}</td>
+                          <td>{{sp.name}}</td>
+                          <td>{{sp.email}}</td>
+                          <td>{{sp.position}}</td>
+                          <td>{{sp.year}}</td>
+                          <td>{{sp.contact}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                     </table>
+                     </div>
+
+    </div>
+    <div id="ermp" class="tab-pane fade">
+    <h4>ER MPs</h4>
+                         <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                        <th>ID</th>
+                          <th>FULL NAME</th>
+                           <th>EMAIL</th>
+                           <th>POSITION</th>
+                          <th>YEAR OF DUTY</th>
+                          <th>CONTACT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for r in er %}
+                        <tr>
+                          <td>{{r.id}}</td>
+                          <td>{{r.name}}</td>
+                          <td>{{r.email}}</td>
+                          <td>{{r.position}}</td>
+                          <td>{{r.year}}</td>
+                          <td>{{r.contact}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                     </table>
+                     </div>
+
+    </div>
+    <div id="army" class="tab-pane fade">
+    <h4>ARMY</h4>
+                         <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                        <th>ID</th>
+                          <th>FULL NAME</th>
+                           <th>EMAIL</th>
+                           <th>POSITION</th>
+                          <th>YEAR OF DUTY</th>
+                          <th>CONTACT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for ar in army %}
+                        <tr>
+                          <td>{{ar.id}}</td>
+                          <td>{{ar.name}}</td>
+                          <td>{{ar.email}}</td>
+                          <td>{{ar.position}}</td>
+                          <td>{{ar.year}}</td>
+                          <td>{{ar.contact}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                     </table>
+                     </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <div id="constituency" class="tab-pane fade">
+    <h3>Constituency Leaders </h3>
+                         <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                        <th>ID</th>
+                          <th>FULL NAME</th>
+                           <th>EMAIL</th>
+                           <th>POSITION</th>
+                          <th>YEAR OF DUTY</th>
+                          <th>CONTACT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for con in const %}
+                        <tr>
+                          <td>{{con.id}}</td>
+                          <td>{{con.name}}</td>
+                          <td>{{con.email}}</td>
+                          <td>{{con.position}}</td>
+                          <td>{{con.year}}</td>
+                          <td>{{con.contact}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                     </table>
+                     </div>
+    </div>
+    <div id="leagues" class="tab-pane fade">
+    <h3>Leagues Leaders </h3>     
+                         <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                        <th>ID</th>
+                          <th>FULL NAME</th>
+                           <th>EMAIL</th>
+                           <th>POSITION</th>
+                          <th>YEAR OF DUTY</th>
+                          <th>CONTACT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for lg in league %}
+                        <tr>
+                          <td>{{lg.id}}</td>
+                          <td>{{lg.name}}</td>
+                          <td>{{lg.email}}</td>
+                          <td>{{lg.position}}</td>
+                          <td>{{lg.year}}</td>
+                          <td>{{lg.contact}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                     </table>
+                     </div>
+    </div>
+    <div id="others" class="tab-pane fade">
+      <h3>Other Leaders</h3>
+                         <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                        <th>ID</th>
+                          <th>FULL NAME</th>
+                           <th>EMAIL</th>
+                           <th>POSITION</th>
+                          <th>YEAR OF DUTY</th>
+                          <th>CONTACT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for oh in other %}
+                        <tr>
+                          <td>{{oh.id}}</td>
+                          <td>{{oh.name}}</td>
+                          <td>{{oh.email}}</td>
+                          <td>{{oh.position}}</td>
+                          <td>{{oh.year}}</td>
+                          <td>{{oh.contact}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                     </table>
+                     </div>
+    </div>
+    <div id="village" class="tab-pane fade">
+                    <div style="padding: 25px 0px 0px 0px">
+                     <h3>Villages</h3>
+                           <div style="padding: 25px 0px 0px 0px">
+                     <table class="table table-bordered">
+                      <thead style="background-color: #FFFF00;">
+                        <tr>
+                          <th>ID</th>
+                          <th>Parish</th>
+                          <th>Villages</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for person in people %}
+                        <tr>
+                          <td>{{person.id}}</td>
+                          <td>{{person.parish}}</td>
+                          <td><a href="#">{{person.village}}</a></td>
+                           <td><a href="#" class="btn btn-info pull-right btn-sm"><span class="glyphicon glyphicon-edit">Edit</span></a></td>
+     <td>
+    <form action=#" method="post" onsubmit="return confirm('Are you sure you want to delete?')">
+      <input type="hidden" name="method" value="DELETE">
+      <button type="submit" name="Delete" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i>Delete</button>
+    </form>
+  </td>
+                        </tr>
+                        {% endfor %}
+                         
+                      </tbody>
+                     </table>
+                    </div>
+                    </div>
+                    </div>
+  </div>
+  </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "dash.html" %}
+ 
+{% block content %}
+
+<div class="container-fuild">
+      <ul class="nav nav-right">
+        <li><a class="btn btn-warning btn-xs pull-right" href="chairman">Admin Dashboard </a></li>
+      </ul>
+<div class="rows">
+<div class="col-lg-3"> {% include 'messages.html' %}</div>
+<div class="col-lg-6">
+
+  <h2>Upload</h2>
+  <form method="POST" action="/upload" >
+    {{ form.hidden_tag() }}
+    <p>Chose any of these categories below:
+     <small style="color:red;">Please choose a category</small></p>
+
+    <div class="form-group">
+      {{form.category.label}}
+      {{form.category(class="drop-down-list")}}
+    </div>
+
+    <div class="form-group">
+      {{form.name.label}}
+      {{form.name(class="form-control")}}
+    </div>
+      <div class="form-group">
+      {{form.email.label}}
+      {{form.email(class="form-control")}}
+    </div>
+
+    <div class="form-group">
+    {{form.position.label}}
+    {{form.position(class="form-control")}}
+    </div>
+    <div class="form-group">
+    {{form.year.label}}
+    {{ form.year(class='datepicker') }}
+ 
+
+    </div>
+    <div class="form-group">
+    {{form.contact.label}}
+    {{form.contact(class="form-control")}}
+    </div>
+
+    {{form.submit(class="btn btn-info")}}
+    <br><br><br><br><br><br><br>
+
+  </form>
+</div>
+<div class="col-lg-3"></div>
+</div>
+<br><br><br><br><br><br><br><br>
+</div>
+
+
+
+
+
+
+{% endblock %}
