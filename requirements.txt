@@ -22,7 +22,7 @@ chardet==2.3.0
 click==6.7
 CouchDB==1.2
 Creoleparser==0.7.4
-cryptography==2.1.4
+cryptography==3.2
 cssselect2==0.2.1
 csvkit==1.0.2
 dbfread==2.0.7
