@@ -102,7 +102,7 @@ future==0.16.0
 Genshi==0.7
 gunicorn==19.7.1
 html5lib==1.0.1
-httplib2==0.10.3
+httplib2==0.19.0
 idna==2.6
 ipaddress==1.0.19
 isodate==0.6.0
