@@ -185,7 +185,7 @@ texttable==1.2.1
 tinycss2==0.6.1
 twilio==6.10.3
 Unidecode==1.0.22
-urllib3==1.22
+urllib3==1.26.5
 URLObject==2.4.3
 vine==1.1.4
 visitor==0.1.3
