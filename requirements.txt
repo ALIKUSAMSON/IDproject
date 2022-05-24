@@ -153,7 +153,7 @@ pyexcel-webio==0.1.4
 pyexcel-xls==0.5.5
 pyexcel-xlsx==0.5.5
 Pygments==2.2.0
-PyJWT==1.5.3
+PyJWT==2.4.0
 pymongo==2.8.1
 PyMySQL==0.8.0
 pyOpenSSL==17.0.0
